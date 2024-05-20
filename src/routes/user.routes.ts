@@ -37,7 +37,7 @@ userRouter.get("/:id", async (req: Request, res: Response, next: NextFunction) =
     });
 
     if (!user) {
-      res.status(404).json({ error: "User not found" });
+      res.status(404).json({ error: "User no encontrado" });
     }
 
     res.json(user);
@@ -62,7 +62,7 @@ userRouter.post("/", async (req: Request, res: Response, next: NextFunction) => 
       });
 
       if (!ticketOfUser) {
-        res.status(404).json({ error: "Ticket not found" });
+        res.status(404).json({ error: "Ticket no encontrado" });
         return;
       }
     }
@@ -90,7 +90,7 @@ userRouter.delete("/:id", async (req: Request, res: Response, next: NextFunction
     });
 
     if (!userToRemove) {
-      res.status(404).json({ error: "User not found" });
+      res.status(404).json({ error: "User no encontrado" });
     } else {
       await userRepository.remove(userToRemove);
       res.json(userToRemove);
@@ -109,7 +109,7 @@ userRouter.put("/:id", async (req: Request, res: Response, next: NextFunction) =
     });
 
     if (!userToUpdate) {
-      res.status(404).json({ error: "User not found" });
+      res.status(404).json({ error: "User no encontrado" });
     } else {
       let ticketOfUser;
 
@@ -121,7 +121,7 @@ userRouter.put("/:id", async (req: Request, res: Response, next: NextFunction) =
       });
 
       if (!ticketOfUser) {
-        res.status(404).json({ error: "Ticket not found" });
+        res.status(404).json({ error: "Ticket no encontrado" });
         return;
       }
     }
@@ -132,8 +132,8 @@ userRouter.put("/:id", async (req: Request, res: Response, next: NextFunction) =
         ticket: ticketOfUser,
       });
 
-      const updatedStudent = await userRepository.save(userToUpdate);
-      res.json(updatedStudent);
+      const updatedUser = await userRepository.save(userToUpdate);
+      res.json(updatedUser);
     }
   } catch (error) {
     next(error);

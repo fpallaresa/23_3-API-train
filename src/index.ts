@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import { userRouter } from "./routes/user.routes";
 import { journeyRouter } from "./routes/journey.routes";
+import { ticketRouter } from "./routes/ticket.routes";
 import { type Request, type Response, type NextFunction, type ErrorRequestHandler } from "express";
 import { AppDataSource } from "./databases/typeorm-datasource";
 
@@ -45,6 +46,12 @@ const main = async (): Promise<void> => {
     next();
   });
 
+  // Acepta /ticket/*
+  app.use("/ticket", (req: Request, res: Response, next: NextFunction) => {
+    console.log("Me han pedido ticket!!!");
+    next();
+  });
+
   // Acepta /journey/*
   app.use("/journey", (req: Request, res: Response, next: NextFunction) => {
     console.log("Me han pedido journey!!!");
@@ -54,6 +61,7 @@ const main = async (): Promise<void> => {
   // Usamos las rutas
   app.use("/public", express.static("public"));
   app.use("/user", userRouter);
+  app.use("/ticket", ticketRouter);
   app.use("/journey", journeyRouter);
   app.use("/", router);
 
