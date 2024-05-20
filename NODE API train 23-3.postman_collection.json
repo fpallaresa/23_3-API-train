@@ -1,0 +1,678 @@
+{
+	"info": {
+		"_postman_id": "fe69bd1c-060f-4a13-9d29-3fcd87a5318e",
+		"name": "NODE API train 23-3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "21261113"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "Get user",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQwODJkYjQ5ZmNmMmViMjg5YzU1Y2YiLCJ1c2VyRW1haWwiOiJqb3JnZUBnbWFpbC5jb20iLCJpYXQiOjE3MTU1MDQxMDIsImV4cCI6MTcxNTU5MDUwMn0.jg2enfFe9NMQqWwpfUlb7pedGnZYz01mPxKWcYtaxVE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/39",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"39"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"firstName\": \"Francesc2\",\n    \"lastName\": \"Pallares2\",\n    \"email\": \"francescpallares2@email.com\",\n    \"password\": \"12345678\",\n    \"nationalityId\": \"98765433Z\",\n    \"nationality\": \"Suecia\",\n    \"birthDate\": \"1980-01-02T00:00:00\",\n    \"treatment\": \"SR.\"\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"francescpallares@email.com\",\r\n    \"password\":\"123456789\"\r\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/user/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"firstName\": \"Francesc\",\r\n    \"lastName\": \"Pallares\",\r\n    \"email\": \"francescpallares@email.com\",\r\n    \"password\": \"12345678\",\r\n    \"nationalityId\": \"98765432Z\",\r\n    \"nationality\": \"Suecia\",\r\n    \"birthDate\": \"1980-01-01T00:00:00\",\r\n    \"treatment\": \"SRA.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/user/43",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"43"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/user/48",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"user",
+								"48"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tickets",
+			"item": [
+				{
+					"name": "Get ticket",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"locator\": \"LsrKICWOMU\",\n    \"isPaid\": false,\n    \"seatType\": \"normal\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ticket/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ticket",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ticket by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ticket/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ticket",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create ticket",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"isPaid\": false,\n    \"seatType\": \"VIP\",\n    \"journeyId\": 7,\n    \"userId\": 48\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/ticket/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ticket",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update ticket",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"isPaid\": false,\r\n    \"seatType\": \"normal\",\r\n    \"userId\": 47,\r\n    \"journeyId\": 8\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/ticket/5",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ticket",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete ticket",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/ticket/7",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"ticket",
+								"7"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "journeys",
+			"item": [
+				{
+					"name": "Get journey",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/journey/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"journey",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get journey by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQwODJkYjQ5ZmNmMmViMjg5YzU1Y2YiLCJ1c2VyRW1haWwiOiJqb3JnZUBnbWFpbC5jb20iLCJpYXQiOjE3MTU1MDQxMDIsImV4cCI6MTcxNTU5MDUwMn0.jg2enfFe9NMQqWwpfUlb7pedGnZYz01mPxKWcYtaxVE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/journey/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"journey",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create journey",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"departureTime\": \"2023-05-01T04:00:00\",\n    \"arrivalTime\": \"2023-05-01T02:00:00\",\n    \"originCity\": \"Compostela\",\n    \"destinationCity\": \"Bilbao\",\n    \"price\": 150\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/journey",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"journey"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update journey",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmNDM2NjkxOGI5NTQwZmUwZWYyNGQiLCJ1c2VyRW1haWwiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNTQzOTIwMiwiZXhwIjoxNzE1NTI1NjAyfQ.3wvRp7asEW39dMonj8IL601sEP2y580FEcLvWOnIImo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"trainId\": 12\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/journey/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"journey",
+								"12"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete journey",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmODYxYTFmYzIzOGUzNjUzMjEzNjkiLCJ1c2VyRW1haWwiOiJjaGltYmFtYmFAZ21haWwuY29tIiwiaWF0IjoxNzE1NDM5NjU4LCJleHAiOjE3MTU1MjYwNTh9.Zea4A29nx8yV3--_O-D7Hk2IA8PBBXu5iYg3Qt-hQYE"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/journey/12",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"journey",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "trains",
+			"item": [
+				{
+					"name": "Get train",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{base_url}}/train/",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"train",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get train by ID",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjQwODJkYjQ5ZmNmMmViMjg5YzU1Y2YiLCJ1c2VyRW1haWwiOiJqb3JnZUBnbWFpbC5jb20iLCJpYXQiOjE3MTU1MDQxMDIsImV4cCI6MTcxNTU5MDUwMn0.jg2enfFe9NMQqWwpfUlb7pedGnZYz01mPxKWcYtaxVE"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/train/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"train",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create train",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \n    \"name\": \"Express Barcelona\",\n    \"vipSeats\": 30,\n    \"businessSeats\": 45,\n    \"normalSeats\": 250\n}"
+						},
+						"url": {
+							"raw": "{{base_url}}/train",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"train"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update train",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmNDM2NjkxOGI5NTQwZmUwZWYyNGQiLCJ1c2VyRW1haWwiOiJqYW5lQGdtYWlsLmNvbSIsImlhdCI6MTcxNTQzOTIwMiwiZXhwIjoxNzE1NTI1NjAyfQ.3wvRp7asEW39dMonj8IL601sEP2y580FEcLvWOnIImo"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \r\n    \"name\": \"Express Bilbao\",\r\n    \"vipSeats\": 30,\r\n    \"businessSeats\": 45,\r\n    \"normalSeats\": 250\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{base_url}}/train/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"train",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete train",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "authorization",
+								"value": "Bearear eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NjNmODYxYTFmYzIzOGUzNjUzMjEzNjkiLCJ1c2VyRW1haWwiOiJjaGltYmFtYmFAZ21haWwuY29tIiwiaWF0IjoxNzE1NDM5NjU4LCJleHAiOjE3MTU1MjYwNTh9.Zea4A29nx8yV3--_O-D7Hk2IA8PBBXu5iYg3Qt-hQYE"
+							}
+						],
+						"url": {
+							"raw": "{{base_url}}/train/11",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"train",
+								"11"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Home",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}
