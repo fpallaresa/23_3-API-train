@@ -58,6 +58,6 @@ export class User {
     }
   }
 
-  @OneToMany(() => Ticket, (ticket) => ticket.user)
+  @OneToMany(() => Ticket, (ticket) => ticket.user, { cascade: true })
   tickets: Ticket[];
 }

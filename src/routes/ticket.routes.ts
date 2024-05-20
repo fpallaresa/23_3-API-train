@@ -1,6 +1,4 @@
 import { Router, type NextFunction, type Request, type Response } from "express";
-import bcrypt from "bcrypt";
-import { generateToken } from "../utils/token";
 import { generateRandomAlphanumeric } from "../utils/utils";
 
 // Typeorm
